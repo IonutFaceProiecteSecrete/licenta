@@ -16,6 +16,7 @@ const themeLight = createTheme({
     mode: "light",
     primary: {
       main: "#1976d2",
+      // main: "#000000",
     },
     secondary: {
       main: "#9c27b0",

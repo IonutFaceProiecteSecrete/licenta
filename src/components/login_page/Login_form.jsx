@@ -58,11 +58,11 @@ function LoginForm() {
           >
             Îți dorești un cont pe platforma noastră?
           </Typography>
-          <Link href="/inregistrare">
+          <Link href="/register" sx={{textDecoration: "none"}}>
             <Typography
               variant={isSmallScreen ? "caption" : "body2"}
               fontWeight="bold"
-              sx={{color: theme.palette.mode.primary }}
+              sx={{color: theme.palette.primary.main }}
             >
               Cont nou
             </Typography>
@@ -117,10 +117,11 @@ function LoginForm() {
             }
             sx={{color: theme.palette.primary.main}}
           />
-          <Link href="/recuperareparola" display="flex" alignItems="center">
+          <Link href="/lostpassword" display="flex" alignItems="center" sx={{textDecoration: "none"}}>
             <Typography
               variant={isSmallScreen ? "caption" : "body2"}
               fontWeight="bold"
+              sx={{color: theme.palette.primary.main }}
             >
               Ai uitat parola?
             </Typography>
