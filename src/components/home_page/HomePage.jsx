@@ -1,15 +1,21 @@
-import { Box, Button, Fab, Stack, Typography } from "@mui/material";
-import { useMediaQuery } from "@mui/material";
-import React, { useState } from "react";
-
+import React from "react";
+import Navbar from "../navbar/Navbar";
 import { useTheme } from "@mui/material/styles";
+import {
+  Typography,
+  useMediaQuery,
+  Box,
+  Grid,
+} from "@mui/material";
+import { useState } from "react";
 
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import LightModeIcon from "@mui/icons-material/LightMode";
 
-import Navbar from "../navbar/Navbar.jsx";
+import SearchArea from "./SearchArea.jsx";
+import SidebarHomePage from "./SidebarHomePage.jsx";
+import PrestatoriNoiGrid from "./PrestatoriNoiGrid.jsx";
+import ButonTema from "../diverse/ButonTema.jsx";
 
-function HomePage() {
+function HomePage2() {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery("(max-width:900px)");
 
@@ -17,109 +23,69 @@ function HomePage() {
 
   return (
     <div className="HomePage">
-      <Navbar meniuActiv={meniuActiv} setMeniuActiv={setMeniuActiv} />
-      <Stack
-        height="calc(100vh - 3rem)"
+      <Navbar meniuActiv={meniuActiv} setMeniuActiv={setMeniuActiv} /> 
+      <Box
+        bgcolor={theme.palette.background.default}
+        display="flex"
+        flexDirection="row"
+        justifyContent="center"
         onClick={() => setMeniuActiv(false)}
-        direction={!isSmallScreen ? "row" : "column"}
-        // justifyContent='space-between'
       >
-        <Stack
-          md={12}
-          xs={12}
-          spacing="3rem"
-          justifyContent="center"
-          alignItems="center"
-          height="calc(100vh - 3rem)"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(https://cdn-res.keymedia.com/cdn-cgi/image/f=auto/https://cdn-res.keymedia.com/cms/images/us/035/0311_638239923405594917.jpg)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            height: "100%",
-          }}
-        >
-          <Stack
-            justifyContent="space-around"
-            spacing="2rem"
-            alignItems="center"
-            lg={6}
-            md={12}
+        <Grid container spacing={0} marginTop="5rem" width="90%">
+          <Grid item md={6} xs={12} mb={4}>
+            <SearchArea />
+          </Grid>
+          <Grid item md={6} xs={0} mb={4}>
+            <Box
+              sx={{
+                height: "100%",
+                backgroundImage:
+                  "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://adbz.cz/wp-content/uploads/2022/08/stavbyvedouci-usmev.jpg)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            />
+          </Grid>
+          <Grid
+            item
+            bgcolor={theme.palette.navbar.main}
+            // paddingLeft={2}
+            // paddingTop={2}
+            mr={4}
+            mb={4}
+            lg={3}
+            display={isSmallScreen ? "none" : ""}
+            borderRadius="1rem"
           >
-            <Typography variant="h1" fontWeight="bold" color='white'>
-              anunturi.
-            </Typography>
-            <Typography variant="body1" width="80%" color='aliceblue'>
-              Bun venit în universul nostru de servicii remarcabile! Aici,
-              fiecare clic înseamnă mai mult decât o acțiune simplă – este pasul
-              tău către soluții personalizate și experiențe care contează.
-              Alătură-te comunității noastre, unde eficiența și simplitatea se
-              întâlnesc pentru a transforma nevoile tale în realitate cu doar un
-              clic distanță. Hai să facem fiecare serviciu să conteze pentru
-              tine!
-            </Typography>
-          </Stack>
-          <Button variant="contained" size="medium" sx={{ width: "20ch" }}>
-            Înregistrare
-          </Button>
-        </Stack>
-        <Stack
-          md={12}
-          xs={12}
-          spacing="3rem"
-          justifyContent="center"
-          alignItems="center"
-          height="calc(100vh - 3rem)"
-          bgcolor="red"
-        >
-          <Stack
-            justifyContent="space-around"
-            spacing="2rem"
-            alignItems="center"
-            lg={6}
-            md={12}
+            <SidebarHomePage />
+          </Grid>
+          <Grid
+            item
+            md
+            sm={12}
+            xs={12}
+            bgcolor={theme.palette.navbar.main}
+            mb={4}
+            borderRadius="1rem"
           >
-            <Typography variant="h1" fontWeight="bold" textAlign="center">
-              Anunturi.
+            <Typography
+              fontSize="20px"
+              fontWeight="700"
+              textAlign="left"
+              color={theme.palette.logo.main}
+              mt={4}
+              mb={4}
+              ml="5%"
+            >
+              PRESTATORI NOI DE SERVICII PE PLATFORMĂ
             </Typography>
-            <Typography variant="body1" width="70%">
-              Bun venit în universul nostru de servicii remarcabile! Aici,
-              fiecare clic înseamnă mai mult decât o acțiune simplă – este pasul
-              tău către soluții personalizate și experiențe care contează.
-              Alătură-te comunității noastre, unde eficiența și simplitatea se
-              întâlnesc pentru a transforma nevoile tale în realitate cu doar un
-              clic distanță. Hai să facem fiecare serviciu să conteze pentru
-              tine!
-            </Typography>
-          </Stack>
-          <Button variant="contained" size="medium" sx={{ width: "20ch" }}>
-            Înregistrare
-          </Button>
-        </Stack>
-      </Stack>
-      <Fab
-        size="medium"
-        color="primary"
-        aria-label="add"
-        sx={{ position: "absolute", bottom: "2rem", left: "2rem" }}
-        onClick={() => {
-          localStorage.setItem(
-            "Theme",
-            localStorage.getItem("Theme") === "themeLight"
-              ? "themeDark"
-              : "themeLight"
-          );
-          window.location.reload(false);
-        }}
-      >
-        {localStorage.getItem("Theme") === "themeLight" ? (
-          <DarkModeIcon />
-        ) : (
-          <LightModeIcon />
-        )}
-      </Fab>
+            <PrestatoriNoiGrid />
+          </Grid>
+        </Grid>
+      </Box>
+      <ButonTema />
     </div>
   );
 }
 
-export default HomePage;
+export default HomePage2;

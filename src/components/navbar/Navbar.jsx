@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Stack, IconButton, Button, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import Link from "@mui/material/Link";
 
 import PersonIcon from "@mui/icons-material/Person";
 import AddIcon from "@mui/icons-material/Add";
@@ -19,9 +19,15 @@ function Navbar(props) {
     <Stack
       direction="row"
       height="3rem"
-      bgcolor={theme.palette.background.default}
+      bgcolor={theme.palette.navbar.main}
       justifyContent={!isSmallScreen ? "space-between" : "flex-start"}
       alignItems="center"
+      position='fixed'
+      top='0'
+      left='0'
+      width="100%"
+      zIndex='2'
+      style={{boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.3)"}}
     >
       <IconButton
         style={{
@@ -41,22 +47,21 @@ function Navbar(props) {
         left="0"
         width="100%"
         sx={{
-          bgcolor: theme.palette.mode === "light" ? "#d7ecff" : "#00081a",
+          bgcolor: theme.palette.navbar.backgroundSmall,
         }}
       >
-        <Button style={{ color: theme.palette.text1.main }} href="/login">
+        <Button style={{ color: theme.palette.navbar.textSmall }} href="/login">
           Conectare
         </Button>
-        <Button style={{ color: theme.palette.text1.main }}>
-          Caută ajutor
+        <Button style={{ color: theme.palette.navbar.textSmall }}>
+          Tipuri servicii
         </Button>
-        <Button style={{ color: theme.palette.text1.main }}>
+        <Button style={{ color: theme.palette.navbar.textSmall }}>
           Misiune și Valori
         </Button>
-        <Button style={{ color: theme.palette.text1.main }}>Despre noi</Button>
+        <Button style={{ color: theme.palette.navbar.textSmall }}>Despre noi</Button>
       </Stack>
-      <Link
-        href="/"
+      <Link href="/"
         style={{
           textDecoration: "none",
           marginLeft: !isSmallScreen ? "2rem" : "0rem",
@@ -66,21 +71,21 @@ function Navbar(props) {
           style={{
             fontSize: "16px",
             fontWeight: "bold",
-            color: theme.palette.text1.main,
+            color: theme.palette.logo.main,
           }}
         >
           anunturi.
         </Typography>
       </Link>
 
-      <Stack direction="row" spacing={4} display={isSmallScreen ? "none" : ""}>
-        <Button style={{ color: theme.palette.text1.main }}>
-          Caută ajutor
+      <Stack direction="row" spacing={1} display={isSmallScreen ? "none" : ""}>
+        <Button sx={{color: theme.palette.logo.main}}>
+          TIPURI SERVICII
         </Button>
-        <Button style={{ color: theme.palette.text1.main }}>
-          Misiune și Valori
+        <Button sx={{color: theme.palette.logo.main}}>
+          MISIUNE ȘI VALORI
         </Button>
-        <Button style={{ color: theme.palette.text1.main }}>Despre noi</Button>
+        <Button sx={{color: theme.palette.logo.main}}>DESPRE NOI</Button>
       </Stack>
       <Stack
         direction="row"
@@ -91,13 +96,15 @@ function Navbar(props) {
         <Button
           startIcon={<PersonIcon />}
           href="/login"
-          sx={{ height: "2rem", color: theme.palette.primary.main }}
+          sx={{ height: "2rem"}}
+          variant="contained"
         >
           Conectare
         </Button>
         <Button
           startIcon={<AddIcon />}
-          sx={{ height: "2rem", color: theme.palette.primary.main }}
+          sx={{ height: "2rem"}}
+          variant="contained"
           href="/register"
         >
           Înregistrare

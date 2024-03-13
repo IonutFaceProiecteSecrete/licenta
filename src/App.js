@@ -4,6 +4,8 @@ import RegisterPage from "./components/register_page/RegisterPage.jsx";
 import PageNotFound from "./components/pagenotfound/PageNotFound.jsx";
 import RecuperareParola from "./components/recuperareparola/RecuperareParola.jsx";
 import HomePage from "./components/home_page/HomePage.jsx";
+import ProfilPrestatorServiciu from "./components/profilPrestatorServiciu/ProfilPrestatorServiciu.jsx";
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -13,6 +15,7 @@ const router = createBrowserRouter(
         <Route path="/login" element={<LoginPage />}/>
         <Route path="/register" element={<RegisterPage />}/>
         <Route path="/lostpassword" element={<RecuperareParola />} />
+        <Route path="/prestator_serviciu" element={<ProfilPrestatorServiciu />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>
     </>

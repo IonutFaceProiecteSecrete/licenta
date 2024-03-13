@@ -5,23 +5,11 @@ import {
   Box,
   useMediaQuery,
   Typography,
-  Link,
   Stack,
   FormControl,
   TextField,
-  InputLabel,
-  OutlinedInput,
-  InputAdornment,
-  IconButton,
-  FormControlLabel,
-  Checkbox,
   Button,
-  Divider,
 } from "@mui/material";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import GoogleIcon from "@mui/icons-material/Google";
-import FacebookIcon from "@mui/icons-material/Facebook";
 import { useState } from "react";
 import { useTheme } from "@mui/material/styles";
 
@@ -54,14 +42,14 @@ function RecuperareParolaForm() {
         <Typography
           variant="h5"
           fontWeight="bold"
-          sx={{ color: theme.palette.text1.main }}
+          sx={{ color: theme.palette.logo.main }}
           // bgcolor="red"
           marginBottom="1rem"
           textAlign="center"
         >
           Găseșteți contul
         </Typography>
-        <Typography variant="body2" mb="1rem" textAlign="center" color={theme.palette.text1.main}>
+        <Typography variant="body2" mb="1rem" textAlign="center" color={theme.palette.navbar.text}>
           Te rog introdu adresa de email pentru a căuta datele contului
           asociat.
         </Typography>
@@ -75,7 +63,7 @@ function RecuperareParolaForm() {
         </FormControl>
 
         <Stack direction='row' justifyContent='center' spacing={2}>
-          <Button variant="contained" sx={{width: "15ch"}} color='error'>
+          <Button variant="contained" sx={{width: "15ch"}} color='error' href="/login">
             Anulează
           </Button>
           <Button variant="contained" sx={{width: "15ch"}}>

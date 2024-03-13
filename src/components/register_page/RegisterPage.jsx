@@ -18,7 +18,7 @@ function RegisterPage() {
             top: "1rem",
             left: "2rem",
             fontWeight: "bold",
-            color: theme.palette.text1.main,
+            color: theme.palette.logo.main,
           }}
         >
           anunturi.
@@ -28,7 +28,7 @@ function RegisterPage() {
         container
         sx={{
           height: "100vh",
-          backgroundColor: theme.palette.background.default,
+          backgroundColor: theme.palette.navbar.main,
         }}
       >
         <RegisterForm />

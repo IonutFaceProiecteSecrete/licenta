@@ -46,7 +46,7 @@ function RegisterForm() {
         <Typography
           variant="h5"
           fontWeight="bold"
-          sx={{ color: theme.palette.text1.main }}
+          sx={{ color: theme.palette.logo.main }}
           // bgcolor="red"
           // marginBottom="0.5rem"
         >
@@ -67,7 +67,7 @@ function RegisterForm() {
           >
             Ești deja membru al comunității noastre?
           </Typography>
-          <Link href="/">
+          <Link href="/login">
             <Typography
               variant={isSmallScreen ? "caption" : "body2"}
               fontWeight="bold"
@@ -143,7 +143,7 @@ function RegisterForm() {
 
         <FormControlLabel control={<Checkbox defaultChecked />} label={
             <Typography variant="body2">Sunt de acord cu <Link href="/">termenii și condițiile</Link>.</Typography>
-        } sx={{color: theme.palette.text1.main}}/>
+        } sx={{ color: theme.palette.mode === "light" ? "grey" : "#DCDCDC"}}/>
 
         <Box
           // bgcolor="red"

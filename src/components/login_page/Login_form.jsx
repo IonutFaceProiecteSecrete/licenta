@@ -37,7 +37,7 @@ function LoginForm() {
         <Typography
           variant="h5"
           fontWeight="bold"
-          sx={{color: theme.palette.text1.main}}
+          sx={{color: theme.palette.logo.main}}
           // bgcolor="red"
           // marginBottom="0.5rem"
         >
