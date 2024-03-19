@@ -31,7 +31,7 @@ const themeLight = createTheme({
     navbar: {
       main: "#EEF5FF",
       text: "black",
-      backgroundSmall: "#cad0d9",
+      backgroundSmall: "#eeeff7",
       textSmall: "black",
     },
     logo: {
@@ -54,15 +54,15 @@ const themeDark = createTheme({
       dark: "#9348a0",
     },
     background: {
-      default: "#16033D",
+      default: "#0a0b0f",
     },
     text1: {
       main: "#a4add3",
     },
     navbar: {
-      main: "#261052",
+      main: "#15161e",
       text: "white",
-      backgroundSmall: "#1b0c3b",
+      backgroundSmall: "#101323",
       textSmall: "white"
     },
     logo: {

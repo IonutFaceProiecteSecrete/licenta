@@ -133,7 +133,7 @@ function LoginForm() {
           justifyContent="center"
           marginBottom="1rem"
         >
-          <Button variant="contained" sx={{ width: "30ch" }}>
+          <Button variant="contained" sx={{ width: "30ch" }} href="/contulmeu">
             Conectare
           </Button>
         </Box>

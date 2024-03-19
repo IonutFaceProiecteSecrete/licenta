@@ -26,7 +26,7 @@ function Navbar(props) {
       top='0'
       left='0'
       width="100%"
-      zIndex='2'
+      zIndex= {100}
       style={{boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.3)"}}
     >
       <IconButton
@@ -54,12 +54,8 @@ function Navbar(props) {
           Conectare
         </Button>
         <Button style={{ color: theme.palette.navbar.textSmall }}>
-          Tipuri servicii
+          Înregistrare
         </Button>
-        <Button style={{ color: theme.palette.navbar.textSmall }}>
-          Misiune și Valori
-        </Button>
-        <Button style={{ color: theme.palette.navbar.textSmall }}>Despre noi</Button>
       </Stack>
       <Link href="/"
         style={{
@@ -78,15 +74,6 @@ function Navbar(props) {
         </Typography>
       </Link>
 
-      <Stack direction="row" spacing={1} display={isSmallScreen ? "none" : ""}>
-        <Button sx={{color: theme.palette.logo.main}}>
-          TIPURI SERVICII
-        </Button>
-        <Button sx={{color: theme.palette.logo.main}}>
-          MISIUNE ȘI VALORI
-        </Button>
-        <Button sx={{color: theme.palette.logo.main}}>DESPRE NOI</Button>
-      </Stack>
       <Stack
         direction="row"
         spacing={1}
